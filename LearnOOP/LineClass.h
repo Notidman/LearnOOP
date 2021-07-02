@@ -48,12 +48,13 @@ namespace Draw
 
 	protected:
 
-		void showCoord() const
+		std::string getCoord() const
 		{
-			std::cout << "{" << beginP.x <<
-				", " << beginP.y <<
-				", " << endP.x <<
-				", " << endP.y << "}" << std::endl;
+			return "{" + std::to_string(beginP.x)
+				+ ", " + std::to_string(beginP.y)
+				+ ", " + std::to_string(endP.x)
+				+ ", " + std::to_string(endP.y)
+				+ "}\n";
 		}
 
 	private:
@@ -104,8 +105,7 @@ namespace Draw
 
 		void Draw() const override
 		{
-			std::cout << "Draw line! ";
-			showCoord();
+			std::cout << "Draw line! " + getCoord();
 		}
 
 		void setBeginPoint(int x, int y)
@@ -135,8 +135,7 @@ namespace Draw
 
 		void Draw() const override
 		{
-			std::cout << "Draw Rect! ";
-			showCoord();
+			std::cout << "Draw Rect! " + getCoord();
 		}
 
 	};
